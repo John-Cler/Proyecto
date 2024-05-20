@@ -21,6 +21,12 @@ class _LoginState extends State<Login> {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
+                const ListTile(
+                  title: Text(
+                    "Iniciar Sesión",
+                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                  ),
+                ),
                 Image.asset(
                   "lib/assets/logo.png",
                   width: 210,
@@ -85,7 +91,7 @@ class _LoginState extends State<Login> {
                 //Button de iniciar sesion con google
                 const SizedBox(height: 10),
                 Container(
-                  height: 70,
+                  height: 55,
                   width: MediaQuery.of(context).size.width * .9,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
