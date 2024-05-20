@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class RegistrarEquipo extends StatelessWidget {
   static String ROUTE = "/registrar";
@@ -16,11 +17,14 @@ class RegistrarEquipo extends StatelessWidget {
 }
 
 class _FormEquipo extends StatelessWidget {
+  final _formKey = GlobalKey<FormState>();
+  final logger = Logger();
   @override
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.all(15),
         child: Form(
+          key: _formKey,
           child: Column(
             children: <Widget>[
               const SizedBox(height: 15),
@@ -59,6 +63,9 @@ class _FormEquipo extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               TextFormField(
+                maxLines: 8, //Caclula la cantidad de lineas que debe ingresar
+                maxLength:
+                    100, //calcula la cantidad maxima que debe ingresar en el text
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "Tiene que ingresar descripción";
@@ -67,7 +74,14 @@ class _FormEquipo extends StatelessWidget {
                 },
                 decoration: const InputDecoration(
                     labelText: "Descripción", border: OutlineInputBorder()),
-              )
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      logger.i("Validar");
+                    }
+                  },
+                  child: const Text('Button'))
             ],
           ),
         ));
