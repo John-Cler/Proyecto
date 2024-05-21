@@ -19,6 +19,10 @@ class RegistrarEquipo extends StatelessWidget {
 class _FormEquipo extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final logger = Logger();
+  final codeControlller = TextEditingController();
+  final titleControlller = TextEditingController();
+  final dateControlller = TextEditingController();
+  final descripcionControlller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,6 +33,7 @@ class _FormEquipo extends StatelessWidget {
             children: <Widget>[
               const SizedBox(height: 15),
               TextFormField(
+                controller: codeControlller,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "Tiene que ingresar codigo";
@@ -41,6 +46,7 @@ class _FormEquipo extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               TextFormField(
+                controller: titleControlller,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "Tiene que ingresar titúlo";
@@ -52,6 +58,7 @@ class _FormEquipo extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               TextFormField(
+                controller: dateControlller,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "Tiene que ingresar fecha";
@@ -63,6 +70,7 @@ class _FormEquipo extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               TextFormField(
+                controller: descripcionControlller,
                 maxLines: 8, //Caclula la cantidad de lineas que debe ingresar
                 maxLength:
                     100, //calcula la cantidad maxima que debe ingresar en el text
@@ -78,7 +86,7 @@ class _FormEquipo extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      logger.i("Validar");
+                      logger.i("Validar" + codeControlller.text);
                     }
                   },
                   child: const Text('Button'))
