@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/menu.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       initialRoute: ListarRegistroEquipo.ROUTE,
       //Definir rutas de todas las paginas que se utilizaran
       routes: {
+        Menu.ROUTE: (_) => Menu(),
         ListarRegistroEquipo.ROUTE: (_) => ListarRegistroEquipo(),
         RegistrarEquipo.ROUTE: (_) => RegistrarEquipo(),
       },

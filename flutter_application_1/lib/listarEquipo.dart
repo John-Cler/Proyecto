@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/menu.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 
 class ListarRegistroEquipo extends StatelessWidget {
-  static const String ROUTE = "/";
+  static String ROUTE = "/";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           Navigator.pushNamed(context, RegistrarEquipo.ROUTE);
         },
       ),
       appBar: AppBar(
-        title: Text("Lista de equipos por John clever asi nomas"),
+        title: const Text("Lista de equipos por John clever asi nomas"),
       ),
       body: Container(
         child: ListView(
@@ -57,6 +58,11 @@ class ListarRegistroEquipo extends StatelessWidget {
             ListTile(
               title: Text("Equipo 13 "),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Menu.ROUTE);
+                },
+                child: const Text("Menu"))
           ],
         ),
       ),
