@@ -87,6 +87,7 @@ class _FormEquipo extends StatelessWidget {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       logger.i("Validar" + codeControlller.text);
+                      logger.i("Validar" + titleControlller.text);
                     }
                   },
                   child: const Text('Button'))
