@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/menu.dart';
 
 class Login extends StatefulWidget {
+  static String ROUTE = "/login";
   const Login({super.key});
 
   @override
@@ -11,7 +13,6 @@ class _LoginState extends State<Login> {
   final username = TextEditingController();
   final password = TextEditingController();
   bool isVisible = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,13 +36,14 @@ class _LoginState extends State<Login> {
                   height: 50,
                 ),
                 Container(
-                  margin: EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: Color.fromARGB(255, 19, 24, 170).withOpacity(.3)),
+                      color: const Color.fromARGB(255, 19, 24, 170)
+                          .withOpacity(.3)),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       icon: Icon(Icons.person),
                       border: InputBorder.none,
                       hintText: "Username",
@@ -97,7 +99,12 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.circular(8),
                       color: Color.fromARGB(255, 192, 20, 7)),
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        bool isSuccess = await AuthService().signInWithGoogle();
+                        if (isSuccess) {
+                          Navigator.pushReplacementNamed(context, Menu.ROUTE);
+                        }
+                      },
                       child: const Text(
                         "Continuar con Google",
                         style: TextStyle(color: Colors.white),
@@ -109,5 +116,16 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+}
+
+class AuthService {
+  Future<bool> signInWithGoogle() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return true;
+  }
+
+  Future<void> signOut() async {
+    await Future.delayed(const Duration(seconds: 1));
   }
 }
