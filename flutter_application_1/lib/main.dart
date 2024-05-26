@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: ListarRegistroEquipo.ROUTE,
+      initialRoute: Login.ROUTE,
       //Definir rutas de todas las paginas que se utilizaran
       routes: {
+        Login.ROUTE: (_) => Login(),
         Menu.ROUTE: (_) => Menu(),
         ListarRegistroEquipo.ROUTE: (_) => ListarRegistroEquipo(),
         RegistrarEquipo.ROUTE: (_) => RegistrarEquipo(),
