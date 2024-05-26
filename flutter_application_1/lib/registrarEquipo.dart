@@ -20,9 +20,14 @@ class _FormEquipo extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final logger = Logger();
   final codeControlller = TextEditingController();
-  final titleControlller = TextEditingController();
+  final tipoControlller = TextEditingController();
   final dateControlller = TextEditingController();
   final descripcionControlller = TextEditingController();
+  final activoControlller = TextEditingController();
+  final nseriControlller = TextEditingController();
+  final marcaControlller = TextEditingController();
+  final modeloControlller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,27 +51,27 @@ class _FormEquipo extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               TextFormField(
-                controller: titleControlller,
+                controller: tipoControlller,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return "Tiene que ingresar titúlo";
+                    return "Tiene que ingresar tipo";
                   }
                   return null;
                 },
                 decoration: const InputDecoration(
-                    labelText: "Titulo", border: OutlineInputBorder()),
+                    labelText: "Tipo", border: OutlineInputBorder()),
               ),
               const SizedBox(height: 15),
               TextFormField(
                 controller: dateControlller,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return "Tiene que ingresar fecha";
+                    return "Tiene que ingresar departamento";
                   }
                   return null;
                 },
                 decoration: const InputDecoration(
-                    labelText: "Fecha", border: OutlineInputBorder()),
+                    labelText: "Departamento", border: OutlineInputBorder()),
               ),
               const SizedBox(height: 15),
               TextFormField(
@@ -83,11 +88,72 @@ class _FormEquipo extends StatelessWidget {
                 decoration: const InputDecoration(
                     labelText: "Descripción", border: OutlineInputBorder()),
               ),
+              const SizedBox(
+                height: 15,
+              ),
+              TextFormField(
+                controller: activoControlller,
+                maxLines: 8,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Ingresae el Número de activo";
+                  }
+                  return null;
+                },
+                decoration: const InputDecoration(
+                    labelText: "Nro Activo", border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: 15),
+              TextFormField(
+                controller: nseriControlller,
+                maxLines: 8,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Ingresar de serie";
+                  }
+                  return null;
+                },
+                decoration: const InputDecoration(
+                  labelText: "Nro de serie",
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              TextFormField(
+                controller: marcaControlller,
+                maxLines: 8,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Ingresar marca del equipo";
+                  }
+                  return null;
+                },
+                decoration: const InputDecoration(
+                  labelText: "Marca de equipo",
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              TextFormField(
+                controller: marcaControlller,
+                maxLines: 8,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Ingresar modelo de equipo";
+                  }
+                  return null;
+                },
+                decoration: const InputDecoration(
+                  labelText: "Marca de equipo",
+                ),
+              ),
               ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       logger.i("Validar" + codeControlller.text);
-                      logger.i("Validar" + titleControlller.text);
+                      logger.i("Validar" + tipoControlller.text);
                     }
                   },
                   child: const Text('Button'))
