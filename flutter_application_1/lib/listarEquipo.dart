@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/menu.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 
 class ListarRegistroEquipo extends StatelessWidget {
@@ -18,7 +17,7 @@ class ListarRegistroEquipo extends StatelessWidget {
       ),
       body: Container(
         child: ListView(
-          children: <Widget>[
+          children: const <Widget>[
             ListTile(
               title: Text("Equipo 1 "),
             ),
@@ -58,11 +57,6 @@ class ListarRegistroEquipo extends StatelessWidget {
             ListTile(
               title: Text("Equipo 13 "),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, Menu.ROUTE);
-                },
-                child: const Text("Menu"))
           ],
         ),
       ),
