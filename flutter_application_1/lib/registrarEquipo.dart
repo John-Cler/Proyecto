@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
 class RegistrarEquipo extends StatelessWidget {
-  static String ROUTE = "/registrar";
+  static String ROUTE = "/registrarEquipo";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Guardar"),
+        title: const Text("Registrar Equipo"),
       ),
       body: SingleChildScrollView(
         child: Container(

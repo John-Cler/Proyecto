@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
+import 'package:flutter_application_1/registrarPersona.dart';
 
 class MyHome extends StatelessWidget {
   @override
@@ -59,7 +60,7 @@ class Menu extends StatelessWidget {
                 ListTile(
                   title: const Text('Registrar Personal'),
                   onTap: () {
-                    Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
+                    Navigator.pushNamed(context, RegistrarPersona.ROUTE);
                   },
                 ),
               ],
