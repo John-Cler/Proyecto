@@ -3,6 +3,7 @@ import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/menu.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
+import 'package:flutter_application_1/registrarPersona.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
       initialRoute: Login.ROUTE,
       //Definir rutas de todas las paginas que se utilizaran
       routes: {
-        Login.ROUTE: (_) => Login(),
+        Login.ROUTE: (_) => const Login(),
         Menu.ROUTE: (_) => Menu(),
         ListarRegistroEquipo.ROUTE: (_) => ListarRegistroEquipo(),
         RegistrarEquipo.ROUTE: (_) => RegistrarEquipo(),
+        RegistrarPersona.ROUTE: (_) => const RegistrarPersona(),
       },
     );
   }
