@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
-import 'package:logger/logger.dart';
 
 class MyHome extends StatelessWidget {
   @override
