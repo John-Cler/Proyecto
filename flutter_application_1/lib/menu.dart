@@ -137,18 +137,23 @@ class Menu extends StatelessWidget {
                   },
                 ),
               ), //Fin del container de Seguimiento
-              ListTile(
-                title: const Text(
-                  "Asignación",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                      color: Colors.white),
+              //Inicio de container de Asignacion
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                child: ListTile(
+                  title: const Text(
+                    "Asignación",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: Colors.blue[400],
+                  onTap: () {
+                    // Add navigation or functionality here
+                  },
                 ),
-                tileColor: Colors.blue[400],
-                onTap: () {
-                  // Add navigation or functionality here
-                },
               ),
               const SizedBox(height: 20),
               ListTile(
