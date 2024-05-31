@@ -4,6 +4,8 @@ import 'package:flutter_application_1/registrarEquipo.dart';
 import 'package:flutter_application_1/registrarPersona.dart';
 
 class MyHome extends StatelessWidget {
+  const MyHome({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,6 +24,8 @@ class MyHome extends StatelessWidget {
 
 class Menu extends StatelessWidget {
   static String ROUTE = "/menu";
+
+  const Menu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +65,6 @@ class Menu extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
                 color: Colors.blue[400],
-                alignment: Alignment.center,
                 child: const Text(
                   "Registrar",
                   style: TextStyle(
@@ -75,7 +78,6 @@ class Menu extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
                 color: Colors.blue[400],
-                alignment: Alignment.center,
                 child: const Text(
                   "Mantenimiento",
                   style: TextStyle(
@@ -89,7 +91,6 @@ class Menu extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
                 color: Colors.blue[400],
-                alignment: Alignment.center,
                 child: const Text(
                   "Reporte",
                   style: TextStyle(
@@ -103,7 +104,6 @@ class Menu extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
                 color: Colors.blue[400],
-                alignment: Alignment.center,
                 child: const Text(
                   "Seguimiento",
                   style: TextStyle(
@@ -117,7 +117,6 @@ class Menu extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
                 color: Colors.blue[400],
-                alignment: Alignment.center,
                 child: const Text(
                   "Asignación",
                   style: TextStyle(
