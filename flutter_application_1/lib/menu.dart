@@ -83,38 +83,6 @@ class Menu extends StatelessWidget {
                   },
                 ),
               ), //Fin del contenedor de Registro
-              Container(
-                margin: const EdgeInsets.only(top: 1),
-                padding: const EdgeInsets.all(1),
-                width: double.infinity,
-                child: ListTile(
-                  title: const Text(
-                    "menu de prueba",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white),
-                  ),
-                  tileColor: Colors.blue[400],
-                  onTap: () {},
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 1),
-                padding: const EdgeInsets.all(1),
-                width: double.infinity,
-                child: ListTile(
-                  title: const Text(
-                    "menu de prueba",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white),
-                  ),
-                  tileColor: Colors.blue[400],
-                  onTap: () {},
-                ),
-              ),
               //Contenedor de Mantenimiento
               Container(
                 margin: const EdgeInsets.only(top: 1),
@@ -132,33 +100,43 @@ class Menu extends StatelessWidget {
                     Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
                   },
                 ),
-              ),
-              ListTile(
-                title: const Text(
-                  "Reporte",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                      color: Colors.white),
+              ), //Fin del container de Mantenimiento
+              //Container de Reporte
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                child: ListTile(
+                  title: const Text(
+                    "Reporte",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: Colors.blue[400],
+                  onTap: () {
+                    // Add navigation or functionality here
+                  },
                 ),
-                tileColor: Colors.blue[400],
-                onTap: () {
-                  // Add navigation or functionality here
-                },
-              ),
-              ListTile(
-                title: const Text(
-                  "Seguimiento",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                      color: Colors.white),
+              ), //Fin del container de Reporte
+              //Inicio del container de Seguimiento
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                child: ListTile(
+                  title: const Text(
+                    "Seguimiento",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: Colors.blue[400],
+                  onTap: () {
+                    // Add navigation or functionality here
+                  },
                 ),
-                tileColor: Colors.blue[400],
-                onTap: () {
-                  // Add navigation or functionality here
-                },
-              ),
+              ), //Fin del container de Seguimiento
               ListTile(
                 title: const Text(
                   "Asignación",
