@@ -73,7 +73,7 @@ class Menu extends StatelessWidget {
                   title: const Text(
                     "Registrar",
                     style: TextStyle(
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.bold,
                         fontSize: 20,
                         color: Colors.white),
                   ),
@@ -115,18 +115,23 @@ class Menu extends StatelessWidget {
                   onTap: () {},
                 ),
               ),
-              ListTile(
-                title: const Text(
-                  "Mantenimiento",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                      color: Colors.white),
+              //Contenedor de Mantenimiento
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                child: ListTile(
+                  title: const Text(
+                    "Mantenimiento",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: Colors.blue[400],
+                  onTap: () {
+                    Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
+                  },
                 ),
-                tileColor: Colors.blue[400],
-                onTap: () {
-                  Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
-                },
               ),
               ListTile(
                 title: const Text(
