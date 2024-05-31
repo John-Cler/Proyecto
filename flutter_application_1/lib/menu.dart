@@ -34,116 +34,269 @@ class Menu extends StatelessWidget {
         title: const Text("Menu principal"),
       ),
       drawer: Drawer(
-        child: Container(
-          color: Colors.white,
+        backgroundColor: Colors.grey[300],
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.all(20),
-                child: Image.asset("lib/assets/appbar.png"),
-              ),
-              const Text(
-                "Administrador",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 30),
-                padding: const EdgeInsets.all(20),
                 width: double.infinity,
-                color: Colors.blue[700],
-                alignment: Alignment.center,
-                child: const Text(
-                  "Home",
+                color: Colors.white, //define el color del contenedor de drawer
+                child: DrawerHeader(
+                  child: Image.asset("lib/assets/appbar.png"),
+                ),
+              ),
+              //Inicio de ListTitle de Administrador
+              const ListTile(
+                title: Text(
+                  "Administrador",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ), //  Fin de ListTitle de Administrador
+              //Inicio de ListTilte de Home
+              const ListTile(
+                title: Text(
+                  "Menu de opciones",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+                ),
+              ),
+              //contenedor de Registrar
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                width: double.infinity,
+                child: ListTile(
+                  title: const Text(
+                    "Registrar",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: Colors.blue[400],
+                  onTap: () {
+                    Navigator.pushNamed(context, RegistrarEquipo.ROUTE);
+                  },
+                ),
+              ), //Fin del contenedor de Registro
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                width: double.infinity,
+                child: ListTile(
+                  title: const Text(
+                    "menu de prueba",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: Colors.blue[400],
+                  onTap: () {},
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 2),
-                padding: const EdgeInsets.all(20),
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
                 width: double.infinity,
-                color: Colors.blue[400],
-                child: const Text(
-                  "Registrar",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                      color: Colors.white),
+                child: ListTile(
+                  title: const Text(
+                    "menu de prueba",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: Colors.blue[400],
+                  onTap: () {},
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 2),
-                padding: const EdgeInsets.all(20),
-                width: double.infinity,
-                color: Colors.blue[400],
-                child: const Text(
+              ListTile(
+                title: const Text(
                   "Mantenimiento",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                       color: Colors.white),
                 ),
+                tileColor: Colors.blue[400],
+                onTap: () {
+                  Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
+                },
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 2),
-                padding: const EdgeInsets.all(20),
-                width: double.infinity,
-                color: Colors.blue[400],
-                child: const Text(
+              ListTile(
+                title: const Text(
                   "Reporte",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                       color: Colors.white),
                 ),
+                tileColor: Colors.blue[400],
+                onTap: () {
+                  // Add navigation or functionality here
+                },
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 2),
-                padding: const EdgeInsets.all(20),
-                width: double.infinity,
-                color: Colors.blue[400],
-                child: const Text(
+              ListTile(
+                title: const Text(
                   "Seguimiento",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                       color: Colors.white),
                 ),
+                tileColor: Colors.blue[400],
+                onTap: () {
+                  // Add navigation or functionality here
+                },
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 2),
-                padding: const EdgeInsets.all(20),
-                width: double.infinity,
-                color: Colors.blue[400],
-                child: const Text(
+              ListTile(
+                title: const Text(
                   "Asignación",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                       color: Colors.white),
                 ),
+                tileColor: Colors.blue[400],
+                onTap: () {
+                  // Add navigation or functionality here
+                },
               ),
-              Expanded(child: Container()),
-              Container(
-                margin: const EdgeInsets.only(top: 2),
-                padding: const EdgeInsets.all(20),
-                width: double.infinity,
-                color: const Color.fromARGB(255, 180, 32, 21),
-                alignment: Alignment.center,
-                child: const Text(
-                  "Sign outt",
+              const SizedBox(height: 20),
+              ListTile(
+                title: const Text(
+                  textAlign: TextAlign.center,
+                  "Sign out",
                   style: TextStyle(
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.bold,
                       fontSize: 20,
                       color: Colors.white),
                 ),
+                tileColor: const Color.fromARGB(255, 180, 32, 21),
+                onTap: () {
+                  // Add sign out functionality here
+                },
               )
             ],
           ),
         ),
       ),
+      // drawer: Drawer(
+      //   child: Container(
+      //     color: Colors.white,
+      //     child: Column(
+      //       children: [
+      //         Container(
+      //           margin: const EdgeInsets.all(20),
+      //           child: Image.asset("lib/assets/appbar.png"),
+      //         ),
+      //         const Text(
+      //           "Administrador",
+      //           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(top: 30),
+      //           padding: const EdgeInsets.all(20),
+      //           width: double.infinity,
+      //           color: Colors.blue[700],
+      //           alignment: Alignment.center,
+      //           child: const Text(
+      //             "Home",
+      //             style: TextStyle(
+      //                 fontWeight: FontWeight.bold,
+      //                 fontSize: 20,
+      //                 color: Colors.white),
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(top: 2),
+      //           padding: const EdgeInsets.all(20),
+      //           width: double.infinity,
+      //           color: Colors.blue[400],
+      //           child: const Text(
+      //             "Registrar",
+      //             style: TextStyle(
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 20,
+      //                 color: Colors.white),
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(top: 2),
+      //           padding: const EdgeInsets.all(20),
+      //           width: double.infinity,
+      //           color: Colors.blue[400],
+      //           child: const Text(
+      //             "Mantenimiento",
+      //             style: TextStyle(
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 20,
+      //                 color: Colors.white),
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(top: 2),
+      //           padding: const EdgeInsets.all(20),
+      //           width: double.infinity,
+      //           color: Colors.blue[400],
+      //           child: const Text(
+      //             "Reporte",
+      //             style: TextStyle(
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 20,
+      //                 color: Colors.white),
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(top: 2),
+      //           padding: const EdgeInsets.all(20),
+      //           width: double.infinity,
+      //           color: Colors.blue[400],
+      //           child: const Text(
+      //             "Seguimiento",
+      //             style: TextStyle(
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 20,
+      //                 color: Colors.white),
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.only(top: 2),
+      //           padding: const EdgeInsets.all(20),
+      //           width: double.infinity,
+      //           color: Colors.blue[400],
+      //           child: const Text(
+      //             "Asignación",
+      //             style: TextStyle(
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 20,
+      //                 color: Colors.white),
+      //           ),
+      //         ),
+      //         Expanded(child: Container()),
+      //         Container(
+      //           margin: const EdgeInsets.only(top: 2),
+      //           padding: const EdgeInsets.all(20),
+      //           width: double.infinity,
+      //           color: const Color.fromARGB(255, 180, 32, 21),
+      //           alignment: Alignment.center,
+      //           child: const Text(
+      //             "Sign outt",
+      //             style: TextStyle(
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 20,
+      //                 color: Colors.white),
+      //           ),
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
