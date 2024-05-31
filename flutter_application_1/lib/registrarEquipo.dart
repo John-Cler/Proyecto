@@ -71,21 +71,21 @@ class _FormEquipo extends StatelessWidget {
             controller: dateControlller,
             validator: (value) {
               if (value!.isEmpty) {
-                return "Tiene que ingresar departamento";
+                return "Tiene que ingresar fecha";
               }
               return null;
             },
             decoration: const InputDecoration(
-              labelText: "Departamento",
+              labelText: "Fecha",
               border: OutlineInputBorder(),
             ),
           ),
           const SizedBox(height: 15),
           TextFormField(
             controller: descripcionControlller,
-            maxLines: 8, // Define la cantidad de lineas que debe ingresar
-            maxLength:
-                100, // Calcula la cantidad máxima que debe ingresar en el texto
+            // maxLines: 8, // Define la cantidad de lineas que debe ingresar
+            // maxLength:
+            //     100, // Calcula la cantidad máxima que debe ingresar en el texto
             validator: (value) {
               if (value!.isEmpty) {
                 return "Tiene que ingresar descripción";
@@ -160,6 +160,11 @@ class _FormEquipo extends StatelessWidget {
                 if (_formKey.currentState!.validate()) {
                   logger.i("Validar: ${codeControlller.text}");
                   logger.i("Validar: ${tipoControlller.text}");
+                  logger.i("Validar: ${dateControlller.text}");
+                  logger.i("Validar: ${descripcionControlller.text}");
+                  logger.i("Validar: ${activoControlller.text}");
+                  logger.i("Validar: ${nseriControlller.text}");
+                  logger.i("Validar: ${modeloControlller.text}");
                   // Se pueden agregar más validaciones aquí si es necesario
                 }
               },
