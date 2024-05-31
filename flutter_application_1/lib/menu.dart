@@ -25,72 +25,21 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Menu principal"),
-      ),
-      body: Center(
-        child: const Text("Selecciona una opción del menú"),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menú de opciones',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ExpansionTile(
-              title: const Text('Registrar'),
-              children: <Widget>[
-                ListTile(
-                  title: const Text('Registrar Equipo'),
-                  onTap: () {
-                    Navigator.pushNamed(context, RegistrarEquipo.ROUTE);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Registrar Personal'),
-                  onTap: () {
-                    Navigator.pushNamed(context, RegistrarPersona.ROUTE);
-                  },
-                ),
+    return MaterialApp(
+      home: Scaffold(
+        drawer: Drawer(
+          child: Container(
+            color: Colors.white,
+            child: Column(
+              children: [
+                Container(
+                    padding: const EdgeInsets.all(20),
+                    child: Image.asset("appbar.png"))
               ],
             ),
-            ListTile(
-              title: const Text('Reportes'),
-              onTap: () {
-                // Navegar a la pantalla de Reportes
-              },
-            ),
-            ListTile(
-              title: const Text('Seguimiento'),
-              onTap: () {
-                // Navegar a la pantalla de Seguimiento
-              },
-            ),
-            ListTile(
-              title: const Text('Mantenimiento'),
-              onTap: () {
-                // Navegar a la pantalla de Mantenimiento
-              },
-            ),
-            ListTile(
-              title: const Text('Asignación'),
-              onTap: () {
-                // Navegar a la pantalla de Asignación
-              },
-            ),
-          ],
+          ),
         ),
+        appBar: AppBar(),
       ),
     );
   }
