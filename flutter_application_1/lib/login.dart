@@ -30,7 +30,7 @@ class _LoginState extends State<Login> {
                 //   ),
                 // ),
                 const Text(
-                  "Iniciar Sesión logign",
+                  "Iniciar Sesión",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 36,

@@ -25,21 +25,21 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        drawer: Drawer(
-          child: Container(
-            color: Colors.white,
-            child: Column(
-              children: [
-                Container(
-                    padding: const EdgeInsets.all(20),
-                    child: Image.asset("appbar.png"))
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Menu principal"),
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              Container(
+                child: Image.asset("lib/assets/appbar.png"),
+              )
+            ],
           ),
         ),
-        appBar: AppBar(),
       ),
     );
   }
