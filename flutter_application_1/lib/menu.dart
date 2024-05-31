@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
+import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 import 'package:flutter_application_1/registrarPersona.dart';
 
@@ -155,20 +156,25 @@ class Menu extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 20),
-              ListTile(
-                title: const Text(
-                  textAlign: TextAlign.center,
-                  "Sign out",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white),
+              //Inicio de container de Sign out
+              const SizedBox(height: 30),
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                child: ListTile(
+                  title: const Text(
+                    textAlign: TextAlign.center,
+                    "Sign out",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                  tileColor: const Color.fromARGB(255, 180, 32, 21),
+                  onTap: () {
+                    Navigator.pushNamed(context, Login.ROUTE);
+                  },
                 ),
-                tileColor: const Color.fromARGB(255, 180, 32, 21),
-                onTap: () {
-                  // Add sign out functionality here
-                },
               )
             ],
           ),
