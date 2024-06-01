@@ -97,7 +97,7 @@ class Menu extends StatelessWidget {
                 width: double.infinity,
                 child: ExpansionTile(
                   title: const Text(
-                    "Registrar",
+                    "Registro",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
@@ -107,19 +107,20 @@ class Menu extends StatelessWidget {
                   children: <Widget>[
                     ListTile(
                       title: const Text(
-                        "Registrar equipo",
+                        "Registro de equipos",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
                             color: Colors.white),
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, RegistrarEquipo.ROUTE);
+                        Navigator.pushNamed(
+                            context, ListarRegistroEquipo.ROUTE);
                       },
                     ),
                     ListTile(
                       title: const Text(
-                        "Registrar persona",
+                        "Registro de persona",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
