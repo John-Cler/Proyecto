@@ -14,7 +14,7 @@ class MyHome extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Menu(),
+      home: const Menu(),
       routes: {
         RegistrarEquipo.ROUTE: (context) => RegistrarEquipo(),
         ListarRegistroEquipo.ROUTE: (context) => ListarRegistroEquipo(),
@@ -172,7 +172,7 @@ class Menu extends StatelessWidget {
               ), //Fin del container de Reporte
               //Inicio del container de Seguimiento
               Container(
-                margin: const EdgeInsets.only(top: 1),
+                margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
                 color: Colors.indigo[900],
                 child: ListTile(
@@ -191,7 +191,7 @@ class Menu extends StatelessWidget {
               ), //Fin del container de Seguimiento
               //Inicio de container de Asignacion
               Container(
-                margin: const EdgeInsets.only(top: 1),
+                margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
                 color: Colors.indigo[900],
                 child: ListTile(
@@ -209,9 +209,9 @@ class Menu extends StatelessWidget {
                 ),
               ),
               //Inicio de container de Sign out
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
               Container(
-                margin: const EdgeInsets.only(top: 1),
+                margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
                 child: ListTile(
                   title: const Text(

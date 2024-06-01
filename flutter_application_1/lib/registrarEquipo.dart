@@ -1,8 +1,12 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
 class RegistrarEquipo extends StatelessWidget {
   static String ROUTE = "/registrarEquipo";
+
+  const RegistrarEquipo({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +34,16 @@ class _FormEquipo extends StatelessWidget {
   final nseriControlller = TextEditingController();
   final marcaControlller = TextEditingController();
   final modeloControlller = TextEditingController();
+  // final List<>Map<String,String>> _equipo = [];
+
+  _pickDate(BuildContext context) async {
+    DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
