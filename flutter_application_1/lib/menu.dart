@@ -32,16 +32,32 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Menu principal"),
-      ),
+          backgroundColor: Colors.indigo[900],
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset(
+                "lib/assets/logo.png",
+                fit: BoxFit.contain,
+                height: 42,
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: const Text("Menu principal",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+              )
+            ],
+          )),
       drawer: Drawer(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.amber,
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 width: double.infinity,
-                color: Colors.white, //define el color del contenedor de drawer
+                color: Colors
+                    .indigo[900], //define el color del contenedor de drawer
                 child: DrawerHeader(
                   child: Image.asset("lib/assets/appbar.png"),
                 ),
@@ -49,7 +65,7 @@ class Menu extends StatelessWidget {
               //Inicio de ListTitle de Administrador
               const ListTile(
                 title: Text(
-                  "Administrador",
+                  "Bienvenido",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -58,45 +74,78 @@ class Menu extends StatelessWidget {
                 ),
               ), //  Fin de ListTitle de Administrador
               //Inicio de ListTilte de Home
-              const ListTile(
-                title: Text(
-                  "Menu de opciones",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+              Container(
+                margin: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.all(1),
+                color: Colors.indigo[900],
+                child: const ListTile(
+                  title: Text(
+                    "Menu de opciones",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.white),
+                  ),
                 ),
               ),
               //contenedor de Registrar
               Container(
-                margin: const EdgeInsets.only(top: 1),
+                margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
+                color: Colors.indigo[900],
                 width: double.infinity,
-                child: ListTile(
+                child: ExpansionTile(
                   title: const Text(
                     "Registrar",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Colors.white),
                   ),
-                  tileColor: Colors.blue[400],
-                  onTap: () {
-                    Navigator.pushNamed(context, RegistrarEquipo.ROUTE);
-                  },
+                  // backgroundColor: Colors.blue[400],
+                  children: <Widget>[
+                    ListTile(
+                      title: const Text(
+                        "Registrar equipo",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, RegistrarEquipo.ROUTE);
+                      },
+                    ),
+                    ListTile(
+                      title: const Text(
+                        "Registrar persona",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, RegistrarPersona.ROUTE);
+                      },
+                    )
+                  ],
                 ),
               ), //Fin del contenedor de Registro
               //Contenedor de Mantenimiento
               Container(
-                margin: const EdgeInsets.only(top: 1),
+                margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
+                color: Colors.indigo[900],
                 child: ListTile(
                   title: const Text(
                     "Mantenimiento",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Colors.white),
                   ),
-                  tileColor: Colors.blue[400],
+                  // tileColor: Colors.amber,
                   onTap: () {
                     Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
                   },
@@ -104,17 +153,18 @@ class Menu extends StatelessWidget {
               ), //Fin del container de Mantenimiento
               //Container de Reporte
               Container(
-                margin: const EdgeInsets.only(top: 1),
+                margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
+                color: Colors.indigo[900],
                 child: ListTile(
                   title: const Text(
                     "Reporte",
                     style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
                         color: Colors.white),
                   ),
-                  tileColor: Colors.blue[400],
+                  // tileColor: Colors.blue[400],
                   onTap: () {
                     // Add navigation or functionality here
                   },
@@ -124,15 +174,16 @@ class Menu extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 1),
                 padding: const EdgeInsets.all(1),
+                color: Colors.indigo[900],
                 child: ListTile(
                   title: const Text(
                     "Seguimiento",
                     style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
                         color: Colors.white),
                   ),
-                  tileColor: Colors.blue[400],
+                  // tileColor: Colors.blue[400],
                   onTap: () {
                     // Add navigation or functionality here
                   },
@@ -142,15 +193,16 @@ class Menu extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 1),
                 padding: const EdgeInsets.all(1),
+                color: Colors.indigo[900],
                 child: ListTile(
                   title: const Text(
                     "Asignación",
                     style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
                         color: Colors.white),
                   ),
-                  tileColor: Colors.blue[400],
+                  // tileColor: Colors.blue[400],
                   onTap: () {
                     // Add navigation or functionality here
                   },
@@ -167,7 +219,7 @@ class Menu extends StatelessWidget {
                     "Sign out",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Colors.white),
                   ),
                   tileColor: const Color.fromARGB(255, 180, 32, 21),
@@ -175,122 +227,11 @@ class Menu extends StatelessWidget {
                     Navigator.pushNamed(context, Login.ROUTE);
                   },
                 ),
-              )
+              ), //Fin del container de Sign out
             ],
           ),
         ),
       ),
-      // drawer: Drawer(
-      //   child: Container(
-      //     color: Colors.white,
-      //     child: Column(
-      //       children: [
-      //         Container(
-      //           margin: const EdgeInsets.all(20),
-      //           child: Image.asset("lib/assets/appbar.png"),
-      //         ),
-      //         const Text(
-      //           "Administrador",
-      //           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(top: 30),
-      //           padding: const EdgeInsets.all(20),
-      //           width: double.infinity,
-      //           color: Colors.blue[700],
-      //           alignment: Alignment.center,
-      //           child: const Text(
-      //             "Home",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.bold,
-      //                 fontSize: 20,
-      //                 color: Colors.white),
-      //           ),
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(top: 2),
-      //           padding: const EdgeInsets.all(20),
-      //           width: double.infinity,
-      //           color: Colors.blue[400],
-      //           child: const Text(
-      //             "Registrar",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.w400,
-      //                 fontSize: 20,
-      //                 color: Colors.white),
-      //           ),
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(top: 2),
-      //           padding: const EdgeInsets.all(20),
-      //           width: double.infinity,
-      //           color: Colors.blue[400],
-      //           child: const Text(
-      //             "Mantenimiento",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.w400,
-      //                 fontSize: 20,
-      //                 color: Colors.white),
-      //           ),
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(top: 2),
-      //           padding: const EdgeInsets.all(20),
-      //           width: double.infinity,
-      //           color: Colors.blue[400],
-      //           child: const Text(
-      //             "Reporte",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.w400,
-      //                 fontSize: 20,
-      //                 color: Colors.white),
-      //           ),
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(top: 2),
-      //           padding: const EdgeInsets.all(20),
-      //           width: double.infinity,
-      //           color: Colors.blue[400],
-      //           child: const Text(
-      //             "Seguimiento",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.w400,
-      //                 fontSize: 20,
-      //                 color: Colors.white),
-      //           ),
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(top: 2),
-      //           padding: const EdgeInsets.all(20),
-      //           width: double.infinity,
-      //           color: Colors.blue[400],
-      //           child: const Text(
-      //             "Asignación",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.w400,
-      //                 fontSize: 20,
-      //                 color: Colors.white),
-      //           ),
-      //         ),
-      //         Expanded(child: Container()),
-      //         Container(
-      //           margin: const EdgeInsets.only(top: 2),
-      //           padding: const EdgeInsets.all(20),
-      //           width: double.infinity,
-      //           color: const Color.fromARGB(255, 180, 32, 21),
-      //           alignment: Alignment.center,
-      //           child: const Text(
-      //             "Sign outt",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.w400,
-      //                 fontSize: 20,
-      //                 color: Colors.white),
-      //           ),
-      //         )
-      //       ],
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

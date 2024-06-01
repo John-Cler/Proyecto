@@ -122,9 +122,9 @@ class _LoginState extends State<Login> {
                         Navigator.pushReplacementNamed(context, Menu.ROUTE);
                       }
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Image(
                           image: AssetImage("lib/assets/google_icon.png"),
                           height: 24,
