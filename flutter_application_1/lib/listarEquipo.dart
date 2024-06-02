@@ -80,7 +80,7 @@ class _ListarRegistroEquipoState extends State<ListarRegistroEquipo> {
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.delete),
+                  icon: const Icon(Icons.delete),
                   onPressed: () {
                     _deleteEquipo(index);
                   },
