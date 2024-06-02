@@ -38,7 +38,7 @@ class _ListarPersonaState extends State<ListarPersona> {
           final persona = _personas[index];
           return ListTile(
             title: Text(
-                '${persona["codigo"]}-${persona["nombre"]},${persona["apaterno"]}'),
+                '${persona["codigo"]}-${persona["nombre"]},${persona["apellidop"]}'),
             subtitle: Text('${persona["email"]}'),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
@@ -76,7 +76,7 @@ class _ListarPersonaState extends State<ListarPersona> {
 
   void _editPersona(int index, Map<String, String> persona) {
     setState(() {
-      _personas.add(persona);
+      _personas[index] = persona;
     });
   }
 
