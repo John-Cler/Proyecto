@@ -30,13 +30,38 @@ class _ListarPersonaState extends State<ListarPersona> {
       ),
       appBar: AppBar(
         title: const Text("Lista de personas"),
+        backgroundColor: Colors.indigo[900],
       ),
       body: ListView.builder(
         itemCount: _personas.length,
         itemBuilder: (context, index) {
           final persona = _personas[index];
           return ListTile(
-            title: Text('${persona["codigo"]}'),
+            title: Text(
+                '${persona["codigo"]}-${persona["nombre"]},${persona["apaterno"]}'),
+            subtitle: Text('${persona["email"]}'),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.edit),
+                  onPressed: () async {
+                    final btn = await Navigator.pushNamed(
+                        context, RegistrarPersona.ROUTE,
+                        arguments: persona);
+                    if (btn != null) {
+                      _editPersona(index, btn as Map<String, String>);
+                    }
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () {
+                    _deletetPersona(index);
+                  },
+                )
+              ],
+            ),
           );
         },
       ),
