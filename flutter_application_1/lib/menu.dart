@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
+import 'package:flutter_application_1/listarPersona.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 import 'package:flutter_application_1/registrarPersona.dart';
@@ -16,7 +17,7 @@ class MyHome extends StatelessWidget {
       ),
       home: const Menu(),
       routes: {
-        RegistrarEquipo.ROUTE: (context) => RegistrarEquipo(),
+        ListarPersona.ROUTE: (context) => ListarPersona(),
         ListarRegistroEquipo.ROUTE: (context) => ListarRegistroEquipo(),
       },
     );
@@ -127,7 +128,7 @@ class Menu extends StatelessWidget {
                             color: Colors.white),
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, RegistrarPersona.ROUTE);
+                        Navigator.pushNamed(context, ListarPersona.ROUTE);
                       },
                     )
                   ],
