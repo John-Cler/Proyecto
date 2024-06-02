@@ -4,7 +4,9 @@ import 'package:intl/intl.dart';
 import 'package:flutter_application_1/registrarPersona.dart';
 
 class ListarPersona extends StatefulWidget {
-  static String ROUTE = "/";
+  static String ROUTE = "/listarPersona";
+
+  const ListarPersona({super.key});
   @override
   _ListarPersonaState createState() => _ListarPersonaState();
 }

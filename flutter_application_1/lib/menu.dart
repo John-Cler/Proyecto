@@ -2,27 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/listarPersona.dart';
 import 'package:flutter_application_1/login.dart';
-import 'package:flutter_application_1/registrarEquipo.dart';
-import 'package:flutter_application_1/registrarPersona.dart';
-
-class MyHome extends StatelessWidget {
-  const MyHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Inicio',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Menu(),
-      routes: {
-        ListarPersona.ROUTE: (context) => ListarPersona(),
-        ListarRegistroEquipo.ROUTE: (context) => ListarRegistroEquipo(),
-      },
-    );
-  }
-}
 
 class Menu extends StatelessWidget {
   static String ROUTE = "/menu";
@@ -63,7 +42,6 @@ class Menu extends StatelessWidget {
                   child: Image.asset("lib/assets/appbar.png"),
                 ),
               ),
-              //Inicio de ListTitle de Administrador
               const ListTile(
                 title: Text(
                   "Bienvenido",
@@ -73,8 +51,7 @@ class Menu extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
-              ), //  Fin de ListTitle de Administrador
-              //Inicio de ListTilte de Home
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 1),
                 padding: const EdgeInsets.all(1),
@@ -90,7 +67,6 @@ class Menu extends StatelessWidget {
                   ),
                 ),
               ),
-              //contenedor de Registrar
               Container(
                 margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
@@ -104,7 +80,6 @@ class Menu extends StatelessWidget {
                         fontSize: 15,
                         color: Colors.white),
                   ),
-                  // backgroundColor: Colors.blue[400],
                   children: <Widget>[
                     ListTile(
                       title: const Text(
@@ -133,8 +108,7 @@ class Menu extends StatelessWidget {
                     )
                   ],
                 ),
-              ), //Fin del contenedor de Registro
-              //Contenedor de Mantenimiento
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
@@ -147,13 +121,11 @@ class Menu extends StatelessWidget {
                         fontSize: 15,
                         color: Colors.white),
                   ),
-                  // tileColor: Colors.amber,
                   onTap: () {
                     Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
                   },
                 ),
-              ), //Fin del container de Mantenimiento
-              //Container de Reporte
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
@@ -166,13 +138,11 @@ class Menu extends StatelessWidget {
                         fontSize: 15,
                         color: Colors.white),
                   ),
-                  // tileColor: Colors.blue[400],
                   onTap: () {
                     // Add navigation or functionality here
                   },
                 ),
-              ), //Fin del container de Reporte
-              //Inicio del container de Seguimiento
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
@@ -185,13 +155,11 @@ class Menu extends StatelessWidget {
                         fontSize: 15,
                         color: Colors.white),
                   ),
-                  // tileColor: Colors.blue[400],
                   onTap: () {
                     // Add navigation or functionality here
                   },
                 ),
-              ), //Fin del container de Seguimiento
-              //Inicio de container de Asignacion
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 5),
                 padding: const EdgeInsets.all(1),
@@ -204,13 +172,11 @@ class Menu extends StatelessWidget {
                         fontSize: 15,
                         color: Colors.white),
                   ),
-                  // tileColor: Colors.blue[400],
                   onTap: () {
                     // Add navigation or functionality here
                   },
                 ),
               ),
-              //Inicio de container de Sign out
               const SizedBox(height: 20),
               Container(
                 margin: const EdgeInsets.only(top: 5),
@@ -229,7 +195,7 @@ class Menu extends StatelessWidget {
                     Navigator.pushNamed(context, Login.ROUTE);
                   },
                 ),
-              ), //Fin del container de Sign out
+              ),
             ],
           ),
         ),

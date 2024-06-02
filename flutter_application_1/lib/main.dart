@@ -7,21 +7,22 @@ import 'package:flutter_application_1/registrarEquipo.dart';
 import 'package:flutter_application_1/registrarPersona.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: Login.ROUTE,
-      //Definir rutas de todas las paginas que se utilizaran
       routes: {
         Login.ROUTE: (_) => const Login(),
         Menu.ROUTE: (_) => const Menu(),
-        ListarRegistroEquipo.ROUTE: (_) => ListarRegistroEquipo(),
-        ListarPersona.ROUTE: (_) => ListarPersona(),
-        RegistrarEquipo.ROUTE: (_) => RegistrarEquipo(),
+        ListarRegistroEquipo.ROUTE: (_) => const ListarRegistroEquipo(),
+        ListarPersona.ROUTE: (_) => const ListarPersona(),
+        RegistrarEquipo.ROUTE: (_) => const RegistrarEquipo(),
         RegistrarPersona.ROUTE: (_) => const RegistrarPersona(),
       },
     );

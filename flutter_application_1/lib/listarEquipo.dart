@@ -4,7 +4,9 @@ import 'package:intl/intl.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 
 class ListarRegistroEquipo extends StatefulWidget {
-  static String ROUTE = "/";
+  static String ROUTE = "/listarRegistroEquipo";
+
+  const ListarRegistroEquipo({super.key});
 
   @override
   _ListarRegistroEquipoState createState() => _ListarRegistroEquipoState();

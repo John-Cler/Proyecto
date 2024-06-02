@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:intl/intl.dart'; // Para manejar el formato de fecha
 
 class RegistrarEquipo extends StatefulWidget {
   static String ROUTE = "/registrarEquipo";
+
+  const RegistrarEquipo({super.key});
 
   @override
   _RegistrarEquipoState createState() => _RegistrarEquipoState();
@@ -222,4 +225,11 @@ class _RegistrarEquipoState extends State<RegistrarEquipo> {
       ),
     );
   }
+
+  // @override
+  // void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  //   super.debugFillProperties(properties);
+  //   properties.add(DiagnosticsProperty<Map<String, String>?>(
+  //       '_currentEquipo', _currentEquipo));
+  // }
 }
