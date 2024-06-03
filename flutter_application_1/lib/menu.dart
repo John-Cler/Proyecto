@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/detalleMantenimiento.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/listarPersona.dart';
 import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/listaMantenimiento.dart';
+import 'package:flutter_application_1/reporte.dart';
 
 class Menu extends StatelessWidget {
   static String ROUTE = "/menu";
@@ -122,7 +125,7 @@ class Menu extends StatelessWidget {
                         color: Colors.white),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, ListarRegistroEquipo.ROUTE);
+                    Navigator.pushNamed(context, ListaMantenimiento.ROUTE);
                   },
                 ),
               ),
@@ -139,7 +142,7 @@ class Menu extends StatelessWidget {
                         color: Colors.white),
                   ),
                   onTap: () {
-                    // Add navigation or functionality here
+                    Navigator.pushNamed(context, Reporte.ROUTE);
                   },
                 ),
               ),
