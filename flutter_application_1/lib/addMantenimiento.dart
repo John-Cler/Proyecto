@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class MaintenanceRecord {
@@ -42,11 +40,7 @@ class _AddEditMaintenanceScreenState extends State<AddMantenimiento> {
   final _statusController = TextEditingController();
   DateTime? _selectedDate;
 
-  final List<String> _technicians = [
-    'Technician A',
-    'Technician B',
-    'Technician C'
-  ];
+  final List<String> _technicians = ['Tecnico A', 'Tecnico B', 'Tecnico C'];
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +60,7 @@ class _AddEditMaintenanceScreenState extends State<AddMantenimiento> {
                   decoration: const InputDecoration(labelText: 'Code'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter the code';
+                      return 'Por favor ingrese el codigo';
                     }
                     return null;
                   },
