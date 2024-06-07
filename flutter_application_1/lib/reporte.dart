@@ -49,7 +49,8 @@ class _ReporteScreenState extends State<Reporte> {
         child: Column(
           children: [
             DropdownButtonFormField<ReportType>(
-              decoration: InputDecoration(labelText: 'Seleccionar reporte'),
+              decoration:
+                  InputDecoration(labelText: 'Seleccionar tipo de reporte'),
               items: ReportType.values.map((ReportType type) {
                 return DropdownMenuItem<ReportType>(
                   value: type,
