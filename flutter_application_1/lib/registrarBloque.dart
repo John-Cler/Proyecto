@@ -4,6 +4,8 @@ import 'dart:convert';
 
 class RegisterBloque extends StatefulWidget {
   static const String ROUTE = "/registrarBloque";
+
+  const RegisterBloque({super.key});
   @override
   _RegisterBlockScreenState createState() => _RegisterBlockScreenState();
 }
@@ -16,10 +18,10 @@ class _RegisterBlockScreenState extends State<RegisterBloque> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registrar Bloque'),
+        title: const Text('Registrar Bloque'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
