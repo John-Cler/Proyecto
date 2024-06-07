@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/addMantenimiento.dart';
+import 'package:flutter_application_1/asignarEquipo.dart';
 import 'package:flutter_application_1/detalleMantenimiento.dart';
 import 'package:flutter_application_1/listaMantenimiento.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/listarPersona.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/menu.dart';
+import 'package:flutter_application_1/registrarBloque.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 import 'package:flutter_application_1/registrarPersona.dart';
 import 'package:flutter_application_1/reporte.dart';
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: Login.ROUTE,
+      //Definir rutas de todas las paginas que se utilizaran
       routes: {
         Login.ROUTE: (_) => const Login(),
         Menu.ROUTE: (_) => const Menu(),
@@ -28,12 +31,14 @@ class MyApp extends StatelessWidget {
         ListarPersona.ROUTE: (_) => const ListarPersona(),
         ListaMantenimiento.ROUTE: (_) => ListaMantenimiento(),
         DetalleMantenimiento.ROUTE: (_) => DetalleMantenimiento(),
+        RegisterBloque.ROUTE: (_) => RegisterBloque(),
         AddMantenimiento.ROUTE: (_) => AddMantenimiento(
               onAddRecord: (MaintenanceRecord) {},
             ),
         Reporte.ROUTE: (_) => Reporte(),
         RegistrarEquipo.ROUTE: (_) => const RegistrarEquipo(),
         RegistrarPersona.ROUTE: (_) => const RegistrarPersona(),
+        AsignarEquipo.ROUTE: (_) => AsignarEquipo(),
       },
     );
   }
