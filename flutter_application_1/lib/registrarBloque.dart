@@ -71,7 +71,7 @@ class _RegisterBlockScreenState extends State<RegisterBloque> {
       _nameController.clear();
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error al registrar el bloque')),
+        const SnackBar(content: Text('Error al registrar el bloque')),
       );
     }
   }

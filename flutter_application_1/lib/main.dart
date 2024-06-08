@@ -8,6 +8,7 @@ import 'package:flutter_application_1/listarPersona.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/menu.dart';
 import 'package:flutter_application_1/registrarBloque.dart';
+import 'package:flutter_application_1/registrarDepartamento.dart';
 import 'package:flutter_application_1/registrarEquipo.dart';
 import 'package:flutter_application_1/registrarPersona.dart';
 import 'package:flutter_application_1/reporte.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         ListarPersona.ROUTE: (_) => const ListarPersona(),
         ListaMantenimiento.ROUTE: (_) => ListaMantenimiento(),
         DetalleMantenimiento.ROUTE: (_) => DetalleMantenimiento(),
-        RegisterBloque.ROUTE: (_) => RegisterBloque(),
+        RegisterBloque.ROUTE: (_) => const RegisterBloque(),
+        RegistrarDepartamento.ROUTE: (_) => RegistrarDepartamento(),
         AddMantenimiento.ROUTE: (_) => AddMantenimiento(
               onAddRecord: (MaintenanceRecord) {},
             ),

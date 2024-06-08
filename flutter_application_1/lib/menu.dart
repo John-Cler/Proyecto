@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/detalleMantenimiento.dart';
+import 'package:flutter_application_1/asignarEquipo.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/listarPersona.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/listaMantenimiento.dart';
+import 'package:flutter_application_1/registrarDepartamento.dart';
 import 'package:flutter_application_1/reporte.dart';
+import 'package:flutter_application_1/registrarBloque.dart';
 
 class Menu extends StatelessWidget {
   static String ROUTE = "/menu";
@@ -108,6 +110,31 @@ class Menu extends StatelessWidget {
                       onTap: () {
                         Navigator.pushNamed(context, ListarPersona.ROUTE);
                       },
+                    ),
+                    ListTile(
+                      title: const Text(
+                        "Registrar Bloque",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, RegisterBloque.ROUTE);
+                      },
+                    ),
+                    ListTile(
+                      title: const Text(
+                        "Registrar Departamento",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, RegistrarDepartamento.ROUTE);
+                      },
                     )
                   ],
                 ),
@@ -176,7 +203,7 @@ class Menu extends StatelessWidget {
                         color: Colors.white),
                   ),
                   onTap: () {
-                    // Add navigation or functionality here
+                    Navigator.pushNamed(context, AsignarEquipo.ROUTE);
                   },
                 ),
               ),
