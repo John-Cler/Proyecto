@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/asignarEquipo.dart';
+import 'package:flutter_application_1/listadoUsuarios.dart';
 import 'package:flutter_application_1/listarEquipo.dart';
 import 'package:flutter_application_1/listarPersona.dart';
-import 'package:flutter_application_1/login.dart';
-import 'package:flutter_application_1/listaMantenimiento.dart';
+import 'package:flutter_application_1/Login/login.dart';
+import 'package:flutter_application_1/Mantenimiento/listaMantenimiento.dart';
 import 'package:flutter_application_1/registrarDepartamento.dart';
 import 'package:flutter_application_1/reporte.dart';
 import 'package:flutter_application_1/registrarBloque.dart';
@@ -29,8 +30,10 @@ class Menu extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8.0),
                 child: const Text("Menu principal",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.white)),
               )
             ],
           )),
@@ -96,7 +99,7 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         Navigator.pushNamed(
-                            context, ListarRegistroEquipo.ROUTE);
+                            context, ListarRegistroEquipo.route);
                       },
                     ),
                     ListTile(
@@ -108,7 +111,7 @@ class Menu extends StatelessWidget {
                             color: Colors.white),
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, ListarPersona.ROUTE);
+                        Navigator.pushNamed(context, ListarPersona.route);
                       },
                     ),
                     ListTile(
@@ -120,7 +123,7 @@ class Menu extends StatelessWidget {
                             color: Colors.white),
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, RegisterBloque.ROUTE);
+                        Navigator.pushNamed(context, RegisterBloque.route);
                       },
                     ),
                     ListTile(
@@ -133,7 +136,7 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         Navigator.pushNamed(
-                            context, RegistrarDepartamento.ROUTE);
+                            context, RegistrarDepartamento.route);
                       },
                     )
                   ],
@@ -152,7 +155,7 @@ class Menu extends StatelessWidget {
                         color: Colors.white),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, ListaMantenimiento.ROUTE);
+                    Navigator.pushNamed(context, ListaMantenimiento.route);
                   },
                 ),
               ),
@@ -169,7 +172,7 @@ class Menu extends StatelessWidget {
                         color: Colors.white),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, Reporte.ROUTE);
+                    Navigator.pushNamed(context, Reporte.route);
                   },
                 ),
               ),
@@ -186,7 +189,7 @@ class Menu extends StatelessWidget {
                         color: Colors.white),
                   ),
                   onTap: () {
-                    // Add navigation or functionality here
+                    Navigator.pushNamed(context, ListadoUsuarios.route);
                   },
                 ),
               ),
@@ -203,7 +206,7 @@ class Menu extends StatelessWidget {
                         color: Colors.white),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, AsignarEquipo.ROUTE);
+                    Navigator.pushNamed(context, AsignarEquipo.route);
                   },
                 ),
               ),
