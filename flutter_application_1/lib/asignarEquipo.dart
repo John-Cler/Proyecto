@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AsignarEquipo extends StatefulWidget {
-  static String ROUTE = "/asignarequipo";
+  static String route = "/asignarequipo";
   @override
   _AssignEquipmentScreenState createState() => _AssignEquipmentScreenState();
 }
